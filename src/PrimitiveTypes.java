@@ -76,10 +76,24 @@ public class PrimitiveTypes {
 	}
 
 
+	/**
+	 * Convert al rightmost 0 bits to 1. 
+	 * Ex: 00100 -> 00111
+	 */
 	public static int rightProp(int num) {
 		return (num | num - 1);
 	}
-
+	
+	/**
+	 * Calculate x modulus power of 2
+	 * Ex: 77 mod 64=13
+	 */
+	public static int calcMod(int n1,int n2){
+		
+		return (n1 & (n2-1));
+	}
+	
+	
 	public static void main(String[] args) {
 		// number of 1s
 		System.out.println(countBits(4));
@@ -88,5 +102,7 @@ public class PrimitiveTypes {
 		System.out.println(rightProp(4));
 		System.out.println(checkParity(4));//1
 		System.out.println(checkParity(6));//0
+		System.out.println(calcMod(77,64));
 	}
+
 }
